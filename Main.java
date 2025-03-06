@@ -1,9 +1,11 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Library library = new Library();
 
         while (true) {
             System.out.print("\n===========================================================================\n");
@@ -16,24 +18,24 @@ public class Main {
             System.out.print("Enter your choice: ");
 
             int choice = 4;
-            if(scanner.hasNextInt()){
-                int test_val = scanner.nextInt();
-                if (test_val > 0 && test_val <= 4) {
-                    choice = test_val;
+            try {
+                choice = scanner.nextInt();
+                if (choice > 0 && choice <= 4) {
                     scanner.nextLine();
                 }
                 else{
-                    System.out.println("Error : Enter a valid choice from the list!");
+                    throw new ArithmeticException("Error : Enter a valid choice from the list!");
                 }
             }
-            else{
+            catch(InputMismatchException e){
                 System.out.println("Error : Invalid Data Type! (KINDLY DISPLAY SOME LEVEL OF INTELLIGENCE.)");
                 scanner.nextLine();
             }
 
             
-            switch (choice) {
+           switch (choice) {
                 case 1:
+                    library.listBooks();
                     break;
 
                 case 2:
@@ -47,6 +49,7 @@ public class Main {
                     if(scanner.hasNextInt())
                     {
                         int bookID = scanner.nextInt();
+                        library.addBook(title, author, bookID);
                         System.out.print("Book successfully added");
                     }
 
@@ -64,7 +67,7 @@ public class Main {
                     System.out.print("Enter Book ID to remove: ");
                     if(scanner.hasNextInt()){
                         int removeID = scanner.nextInt();
-                        System.out.print("Book removed successfully. \n");
+                        library.removeBook(removeID);
                     }
                     else{
                         System.out.println("Error: Invalid value entered!");
