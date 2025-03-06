@@ -2,40 +2,37 @@ public class Book {
     private String title;
     private String author;
     private int bookID;
-    private boolean isavailable;
+    private boolean isAvailable;
 
-    public Book(String title, String author, int bookID)
-    {
-        this.title  = title;
+    public Book(String title, String author, int bookID) {
+        this.title = title;
         this.author = author;
         this.bookID = bookID;
-        this.isavailable = true;
+        this.isAvailable = true;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public String getAuthor(){
+    public String getAuthor() {
         return author;
     }
 
-    public int getBookId(){
+    public int getBookId() {
         return bookID;
     }
 
-    public boolean isAvailable(){
-        return isavailable;
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public void setAvailable(boolean availabe){
-        isavailable = availabe;
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     @Override
     public String toString() {
-        return "Book ID: " + bookID + ", Title: " + title + ", Author: " + author + ", Available: " + isavailable;
-    }   
+        return "Book ID: " + bookID + ", Title: " + title + ", Author: " + author + ", Available: " + isAvailable;
+    }
 }
-
-
