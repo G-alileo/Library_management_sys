@@ -1,3 +1,3 @@
 Default Login credentials:
-        admin,admin123,LIBRARIAN
-        user,user123,REGULAR
+      LIBRARIAN :  admin,admin123
+      REGULAR :  user,user123
